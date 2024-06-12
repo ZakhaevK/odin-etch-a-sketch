@@ -1,0 +1,17 @@
+html {
+  background-color: rgb(41, 41, 41);
+}
+
+.content {
+  width: 1200px;
+  margin: auto;
+  background-color: rgb(163, 149, 149);
+}
+
+.grid-div {
+  display: flex;
+}
+
+.square {
+  flex: 1;
+}
