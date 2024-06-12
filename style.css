@@ -10,8 +10,13 @@ html {
 
 .grid-div {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .square {
-  flex: 1;
+  box-sizing: border-box;
+  border: brown solid 1px;
+  height: 75px;
+  width: 75px;
+  margin: 0;
 }
