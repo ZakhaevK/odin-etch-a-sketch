@@ -20,16 +20,21 @@ function initialiseGridElements(num) {
 
   for (let i = 0; i < num; i++) {
     const square = document.createElement("div");
-    square.setAttribute("class", "square");
-    square.setAttribute("style", `height:${size}px; width:${size}px`);
+    square.className = "square";
+    square.style.height = `${size}`;
+    square.style.width = `${size}`;
+    let brightness = 100;
     squareArray[i] = square;
     grid.appendChild(square);
     
     square.addEventListener("mouseover", () => {
-      square.setAttribute("style", `height:${size}px; width:${size}px; background-color:rgb(${randomRGBValues()})`);
+      if (brightness > 0) brightness -= 10;
+      square.style.backgroundColor = `rgb(${randomRGBValues()})`;
+      square.style.filter = `brightness(${brightness}%)`;
+      ;
     })
   }
- }
+}
 
 
  function initialiseMenu() {
