@@ -1,3 +1,5 @@
+const gridSizeInput = document.querySelector("#grid-input");
+const gridUpdateBtn = document.querySelector(".update");
 const grid = document.querySelector(".grid-div");
 let squareArray = []; // Used to access squares later (might change)
 
@@ -10,6 +12,7 @@ function randomRGBValues() {
 }
 
 function initialiseGridElements(num) {
+  grid.replaceChildren();
   num = num * num;
   for (let i = 0; i < num; i++) {
     const square = document.createElement("div");
@@ -23,5 +26,18 @@ function initialiseGridElements(num) {
   }
  }
 
+
+ function initialiseMenu() {
+  gridSizeInput.addEventListener("", () => {
+    if (isNaN(gridSizeInput.value)) gridSizeInput.value = 0;
+  })
+
+  gridUpdateBtn.addEventListener("click", () => {
+    if (parseInt(gridSizeInput.value) > 100) gridSizeInput.value = 100;
+    initialiseGridElements(gridSizeInput.value);
+  })
+ }
+
 // initialise all elements 16x16 = 256
- initialiseGridElements(16);
+initialiseMenu();
+initialiseGridElements(16);
