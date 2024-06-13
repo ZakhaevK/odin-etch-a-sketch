@@ -33,7 +33,7 @@ function initialiseGridElements(num) {
 
 
  function initialiseMenu() {
-  gridSizeInput.addEventListener("keydown", () => {
+  gridSizeInput.addEventListener("input", () => {
     if (isNaN(gridSizeInput.value)) gridSizeInput.value = 0;
   })
 
