@@ -13,22 +13,27 @@ function randomRGBValues() {
 
 function initialiseGridElements(num) {
   grid.replaceChildren();
+  squareArray = [];
+  size = 960 / num;
   num = num * num;
+
+
   for (let i = 0; i < num; i++) {
     const square = document.createElement("div");
     square.setAttribute("class", "square");
+    square.setAttribute("style", `height:${size}px; width:${size}px`);
     squareArray[i] = square;
     grid.appendChild(square);
     
     square.addEventListener("mouseover", () => {
-      square.setAttribute("style", `background-color:rgb(${randomRGBValues()})`);
+      square.setAttribute("style", `height:${size}px; width:${size}px; background-color:rgb(${randomRGBValues()})`);
     })
   }
  }
 
 
  function initialiseMenu() {
-  gridSizeInput.addEventListener("", () => {
+  gridSizeInput.addEventListener("keydown", () => {
     if (isNaN(gridSizeInput.value)) gridSizeInput.value = 0;
   })
 
