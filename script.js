@@ -35,10 +35,10 @@ function initialiseGridElements(num) {
  function initialiseMenu() {
   gridSizeInput.addEventListener("input", () => {
     if (isNaN(gridSizeInput.value)) gridSizeInput.value = 0;
+    if (parseInt(gridSizeInput.value) > 100) gridSizeInput.value = 100;
   })
 
   gridUpdateBtn.addEventListener("click", () => {
-    if (parseInt(gridSizeInput.value) > 100) gridSizeInput.value = 100;
     initialiseGridElements(gridSizeInput.value);
   })
  }
