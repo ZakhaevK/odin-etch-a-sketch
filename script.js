@@ -21,8 +21,8 @@ function initialiseGridElements(num) {
   for (let i = 0; i < num; i++) {
     const square = document.createElement("div");
     square.className = "square";
-    square.style.height = `${size}`;
-    square.style.width = `${size}`;
+    square.style.height = `${size}px`;
+    square.style.width = `${size}px`;
     let brightness = 100;
     squareArray[i] = square;
     grid.appendChild(square);
@@ -31,7 +31,6 @@ function initialiseGridElements(num) {
       if (brightness > 0) brightness -= 10;
       square.style.backgroundColor = `rgb(${randomRGBValues()})`;
       square.style.filter = `brightness(${brightness}%)`;
-      ;
     })
   }
 }
