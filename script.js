@@ -10,6 +10,7 @@ function randomRGBValues() {
 }
 
 function initialiseGridElements(num) {
+  num = num * num;
   for (let i = 0; i < num; i++) {
     const square = document.createElement("div");
     square.setAttribute("class", "square");
@@ -23,4 +24,4 @@ function initialiseGridElements(num) {
  }
 
 // initialise all elements 16x16 = 256
- initialiseGridElements(256);
+ initialiseGridElements(16);
